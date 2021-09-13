@@ -65,9 +65,3 @@ jobs:
           skip-go-installation: true
 
         if: github.event_name == 'pull_request'
-
-      - name: Check go.mod/go.sum
-        run: |
-          echo "check if go.mod and go.sum are up to date"
-          go mod tidy
-          git diff --exit-code go.mod go.sum
